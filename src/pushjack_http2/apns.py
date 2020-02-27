@@ -882,7 +882,7 @@ class APNSAuthTokenFile(APNSAuthToken):
 class APNSHTTP2Client(object):
     host = APNS_TOKEN_BASED_HOST
     port = APNS_TOKEN_BASED_PORT
-    
+
     def __init__(self,
                  token,
                  bundle_id,
@@ -991,7 +991,6 @@ class APNSHTTP2Client(object):
         validate_tokens(ids)
         validate_message(message, max_size=APNS_HTTP2_MAX_NOTIFICATION_SIZE)
 
-        print('############'*90)
         for device_id in ids:
 
             try:
@@ -999,6 +998,7 @@ class APNSHTTP2Client(object):
                     device_id=device_id, message=message,
                     low_priority=low_priority, expiration=expiration)
             except Exception:
+            print('############'*90)
                 unsendable_devices.append(device_id)
 
         if not unsendable_devices:
