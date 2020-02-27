@@ -1025,6 +1025,7 @@ class APNSHTTP2Client(object):
         if not identifier:
             identifier = str(uuid.uuid4())
 
+        import pdb; pdb.set_trace()
         request_headers = {
             'apns-expiration': expiration,
             'apns-priority': priority,
@@ -1033,7 +1034,6 @@ class APNSHTTP2Client(object):
             'authorization': 'bearer {0}'.format(self.token.encrypted_token)
         }
 
-        import pdb; pdb.set_trace()
         try:
             stream_id = self.conn.request(
                 method='POST',
