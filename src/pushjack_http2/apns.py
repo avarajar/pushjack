@@ -882,7 +882,7 @@ class APNSAuthTokenFile(APNSAuthToken):
 class APNSHTTP2Client(object):
     host = APNS_TOKEN_BASED_HOST
     port = APNS_TOKEN_BASED_PORT
-
+    print('############'*90)
     def __init__(self,
                  token,
                  bundle_id,
@@ -976,7 +976,7 @@ class APNSHTTP2Client(object):
                 together in Notification Center. Defaults to ``None``.
             extra (dict, optional): Extra data to include with the alert.
         """
-        print('############'*90)
+        
         assert ids, 'Must provide device IDs.'
 
         if not isinstance(ids, (list, tuple)):
