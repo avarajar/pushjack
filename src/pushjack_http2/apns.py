@@ -1014,7 +1014,7 @@ class APNSHTTP2Client(object):
             identifier=None, expiration=None):
 
         json_data = message.to_json()
-
+        import pdb; pdb.set_trace()
         if low_priority:
             priority = str(APNS_LOW_PRIORITY)
         else:
