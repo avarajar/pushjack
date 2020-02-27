@@ -988,7 +988,7 @@ class APNSHTTP2Client(object):
         message = APNSMessage(message,
                               max_payload_length=max_payload_length,
                               **options)
-
+        print('############'*90)
         validate_tokens(ids)
         validate_message(message, max_size=APNS_HTTP2_MAX_NOTIFICATION_SIZE)
 
@@ -1012,6 +1012,7 @@ class APNSHTTP2Client(object):
     def _send(
             self, device_id, message, low_priority,
             identifier=None, expiration=None):
+
         json_data = message.to_json()
 
         if low_priority:
