@@ -976,7 +976,6 @@ class APNSHTTP2Client(object):
                 together in Notification Center. Defaults to ``None``.
             extra (dict, optional): Extra data to include with the alert.
         """
-        print('############'*90)
         assert ids, 'Must provide device IDs.'
 
         if not isinstance(ids, (list, tuple)):
@@ -992,6 +991,7 @@ class APNSHTTP2Client(object):
         validate_tokens(ids)
         validate_message(message, max_size=APNS_HTTP2_MAX_NOTIFICATION_SIZE)
 
+        print('############'*90)
         for device_id in ids:
 
             try:
