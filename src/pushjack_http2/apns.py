@@ -998,7 +998,6 @@ class APNSHTTP2Client(object):
                     device_id=device_id, message=message,
                     low_priority=low_priority, expiration=expiration)
             except Exception:
-                print('############'*90)
                 unsendable_devices.append(device_id)
 
         if not unsendable_devices:
@@ -1025,7 +1024,6 @@ class APNSHTTP2Client(object):
         if not identifier:
             identifier = str(uuid.uuid4())
 
-        import pdb; pdb.set_trace()
         request_headers = {
             'apns-expiration': expiration,
             'apns-priority': priority,
